@@ -1,0 +1,26 @@
+<mvc:View 
+    controllerName="at.clouddna.lagerverwaltung.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <SplitApp
+        id="pages">
+        <detailPages>
+            
+        </detailPages>
+        <masterPages>
+            <Page
+                id="menu"
+                title="Menu"
+                backgroundDesign="List">
+                <List itemPress="_onListItemPressed">
+                    <items>
+                    <StandardListItem id="produkte_ID" title="Produkte" type="Active" />
+                    <StandardListItem id="lieferanten_ID" title="Lieferanten" type="Active" />
+                    <StandardListItem id="lagerorte_ID" title="Lagerorte" type="Active" />
+                    </items>
+                </List>
+            </Page>
+        </masterPages>
+    </SplitApp>
+</mvc:View>

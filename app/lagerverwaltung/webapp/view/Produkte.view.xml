@@ -1,0 +1,58 @@
+<mvc:View id="Produkte"
+    controllerName="at.clouddna.lagerverwaltung.controller.Produkte" 
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 
+    xmlns:core="sap.ui.core" 
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified" 
+    xmlns="sap.m"
+    class="viewPadding">
+    <Page id="page" title="Produkte">
+        <content>
+        <HBox>
+        <Table id="produkte_table" headerText="Produkte" items="{path:'/Produkte'}">
+                <headerToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1">
+                        <Title id="_IDGenTitle1" text="Produkte" />
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        <Button icon="sap-icon://download" press="toExcel" />
+                        <Button text="Create" type="Accept" press="onCreatePressed" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Produktname" />
+                    </Column>
+                    <Column>
+                        <Text text="Produktbeschreibung" />
+                    </Column>
+                    <Column>
+                        <Text text="Anzahl" />
+                    </Column>
+                    <Column>
+                        <Text text="Einkaufspreis" />
+                    </Column>
+                    <Column>
+                        <Text text="Währung" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="listEntries" type="Navigation" press="onListItemPressed">
+                        <cells>     
+                            <Text text="{Produkte>name}" />
+                            <Text text="{Produkte>beschreibung}" />
+                            <Text text="{Produkte>anzahl}" />
+                            <Text text="{Produkte>einkaufspreis}" />
+                            <Text text="{Produkte>waehrung}" />
+                            <HBox>
+                            <!--<Button id="commentButton" icon="sap-icon://comment" type="Ghost" press="onCommentButtonPressed" visible="{= !!${comment}}"/>-->
+                            <Button id="deleteButton" icon="sap-icon://delete" type="Reject" press="onDeleteButtonPressed"/>
+                            </HBox>
+                            </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </HBox>
+        </content>
+    </Page>
+</mvc:View>
