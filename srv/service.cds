@@ -4,4 +4,5 @@ service Lagerverwaltung {
     entity Produkt as projection on lv.Produkt;
     entity Lieferant as projection on lv.Lieferant;
     entity Lagerort as projection on lv.Lagerort;
+    entity Waehrung as projection on lv.Waehrung;
 }

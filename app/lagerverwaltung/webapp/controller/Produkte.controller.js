@@ -43,6 +43,11 @@ sap.ui.define(
             ID: sPath.split("(")[1].split(")")[0],
           });
         },*/
+
+        onCreatePressed: function () {
+          let oRouter = this.getOwnerComponent().getRouter();
+          oRouter.navTo("ProduktErstellen");
+        },
   
         onDeleteButtonPressed: function (oEvent) {
           let oResourceBundle = this.getView()
@@ -74,29 +79,25 @@ sap.ui.define(
         },
         toExcel: function () {
           var aColumns = [];
-          let oStart = this.getView().byId("calendar").getStartDate();
-          let oEnd = new Date(oStart.getFullYear(), oStart.getMonth() + 1, 0);
-          let oStartFilter = oStart.toISOString().split("T")[0];
-          let oEndFilter = oEnd.toISOString().split("T")[0];
           aColumns.push({
               label: "Produktname",
-              property: "Produkte/name"
+              property: "Produkt/name"
           });
           aColumns.push({
               label: "Lastname",
-              property: "Produkte/beschreibung"
+              property: "Produkt/beschreibung"
           });
           aColumns.push({
               label: "Anzahl",
-              property: "Produkte/anzahl"
+              property: "Produkt/anzahl"
           });
           aColumns.push({
             label: "Einkaufspreis",
-            property: "Produkte/einkaufspreis"
+            property: "Produkt/einkaufspreis"
           });
           aColumns.push({
             label: "Währung",
-            property: "Produkte"
+            property: "Produkt/waehrung"
           });
         
           var mSettings = {

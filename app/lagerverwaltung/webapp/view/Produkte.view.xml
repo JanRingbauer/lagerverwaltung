@@ -10,13 +10,13 @@
     <Page id="page" title="Produkte">
         <content>
         <HBox>
-        <Table id="produkte_table" headerText="Produkte" items="{path:'/Produkte'}">
+        <Table id="produkte_table" headerText="Produkte" items="{path:'/Produkt'}">
                 <headerToolbar>
                     <OverflowToolbar id="_IDGenOverflowToolbar1">
                         <Title id="_IDGenTitle1" text="Produkte" />
                         <ToolbarSpacer id="_IDGenToolbarSpacer1" />
                         <Button icon="sap-icon://download" press="toExcel" />
-                        <Button text="Create" type="Accept" press="onCreatePressed" />
+                        <Button text="neuen Eintrag erstellen" type="Accept" press="onCreatePressed" />
                     </OverflowToolbar>
                 </headerToolbar>
                 <columns>
@@ -39,11 +39,11 @@
                 <items>
                     <ColumnListItem id="listEntries" type="Navigation" press="onListItemPressed">
                         <cells>     
-                            <Text text="{Produkte>name}" />
-                            <Text text="{Produkte>beschreibung}" />
-                            <Text text="{Produkte>anzahl}" />
-                            <Text text="{Produkte>einkaufspreis}" />
-                            <Text text="{Produkte>waehrung}" />
+                            <Text text="{Produkt>name}" />
+                            <Text text="{beschreibung}" />
+                            <Text text="{anzahl}" />
+                            <Text text="{einkaufspreis}" />
+                            <Text text="{waehrung}" />
                             <HBox>
                             <!--<Button id="commentButton" icon="sap-icon://comment" type="Ghost" press="onCommentButtonPressed" visible="{= !!${comment}}"/>-->
                             <Button id="deleteButton" icon="sap-icon://delete" type="Reject" press="onDeleteButtonPressed"/>

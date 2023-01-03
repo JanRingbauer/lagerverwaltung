@@ -14,7 +14,7 @@ entity Produkt: managed {
         anzahl        : String;
         lagerort      : Association to Lagerort;
         einkaufspreis : Decimal;
-        waehrung      : Currency;
+        waehrung      : Association to Waehrung;
         lieferant     : Association to Lieferant;
 }
 
@@ -27,4 +27,10 @@ entity Lieferant: managed {
 entity Lagerort: managed {
     key ID  : UUID;
         ort : String;
+}
+entity Waehrung: managed {
+    key ID : UUID;
+    name : String;
+    kuerzel : String;
+    symbol : String;
 }
