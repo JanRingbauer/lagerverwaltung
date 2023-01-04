@@ -43,7 +43,7 @@
                             <Text text="{beschreibung}" />
                             <Text text="{anzahl}" />
                             <Text text="{einkaufspreis}" />
-                            <Text text="{waehrung}" />
+                            <Text text="{waehrung/name}" />
                             <HBox>
                             <!--<Button id="commentButton" icon="sap-icon://comment" type="Ghost" press="onCommentButtonPressed" visible="{= !!${comment}}"/>-->
                             <Button id="deleteButton" icon="sap-icon://delete" type="Reject" press="onDeleteButtonPressed"/>
