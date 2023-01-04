@@ -43,7 +43,7 @@
 					<StepInput
 						value="{createModel>/anzahl}"
 						displayValuePrecision="{displayValuePrecision}"
-						min="0"
+						min="1"
 						max="{max}"
 						width="{width}"
 						step="{step}"
@@ -59,7 +59,7 @@
 						change="onChange"/>
 				</VBox>
 				<Label text="Einkauspreis" labelFor="edit_input_einkaufspreis"/>
-				<Input value="{createModel>/einkaufspreis}" type="Number">
+				<Input value="{path:'createModel>/einkaufspreis', type: 'sap.ui.model.odata.type.Double'}" type="Number">
                 </Input>
                 <Label text="Währung" labelFor="edit_input_waehrung" />
 		        <ActionSelect

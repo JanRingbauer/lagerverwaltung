@@ -22,29 +22,29 @@ sap.ui.define(
       "use strict";
   
       return Controller.extend("at.clouddna.lagerverwaltung.controller.ProduktErstellen", {
-        _fragmentList: {},
         bCreate: false,
   
         onInit: function () {
           let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
           oRouter
-            .getRoute("Produkte")
+            .getRoute("ProduktErstellen")
             .attachPatternMatched(this._onPatternMatched, this);
         },
   
         _onPatternMatched: function (oEvent) {
             this.bCreate = true; 
+            debugger;
             this.getView().unbindElement();
             let oModel=new JSONModel({
-              name: this.getView().getModel("createModel").oData.name,
-              beschreibung: this.getView().getModel("createModel").oData.beschreibung,
-              anzahl: this.getView().getModel("createModel").oData.anzahl,
-              einkaufspreis: this.getView().getModel("createModel").oData.einkaufspreis,
-              waehrung: this.getView().getModel("createModel").oData.waehrung
+              name: "",
+              beschreibung: "",
+              anzahl: 1,
+              einkaufspreis: 0.1,
+              waehrung: ""
             });
             this.getView().setModel(oModel, "createModel");
-
           },
+
         
         onDeleteButtonPressed: function (oEvent){
           //let oModel = this.getView().getModel();
@@ -93,16 +93,30 @@ sap.ui.define(
           let oResourceBundle = this.getView()
             .getModel("i18n")
             .getResourceBundle();
+            debugger;
           let sSuccessText = this.bCreate
             ? oResourceBundle.getText("Ihr Eintrag wurde erfolgreich erstellt!")
-            : oResourceBundle.getText("Ihr Eintrag wurde erfolgreich geändert!");
+            : oResourceBundle.getText("Ihr Eintrag konnte nicht erstellt werden!");
             
           //this.getView().bindElement(oListBindingContext.getPath());
           if(this.bCreate){
-            
-            let oListBindingContext=this.getView().getModel().bindList("/Produkt").create(this.getView().getModel("createModel").getData());
-    
-            oModel.submitBatch("$auto").then((oData, response) => {
+            let oCreate={
+              anzahl: "1",
+              beschreibung: "",
+              einkaufspreis: "0.1",
+              name: "mkl",
+              waehrung: "b0eb171b-3b02-4f7d-aa2b-02db8353c885"
+            };
+            oModel.bindList("/Produkt").create(oCreate);
+
+            oModel.submitBatch("$auto").then((oData, response)=>{
+              debugger;
+            }, (oError)=>{
+              debugger;
+            })
+          }
+            /*oModel.submitBatch("$auto").then((oData, response) => {
+              debugger;
               MessageBox.success(sSuccessText, {
                 onClose: () => {
                   if (this.bCreate) {
@@ -117,6 +131,7 @@ sap.ui.define(
               );
             
             (oError) => {
+
               MessageBox.error(oError.message);
             }
             });
@@ -140,8 +155,7 @@ sap.ui.define(
               },
             );
           }
-        },
-      });
+        },*/
+      },
     },
-  );
-
+  );})

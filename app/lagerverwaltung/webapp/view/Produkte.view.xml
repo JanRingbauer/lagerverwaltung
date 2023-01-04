@@ -39,7 +39,7 @@
                 <items>
                     <ColumnListItem id="listEntries" type="Navigation" press="onListItemPressed">
                         <cells>     
-                            <Text text="{Produkt>name}" />
+                            <Text text="{name}" />
                             <Text text="{beschreibung}" />
                             <Text text="{anzahl}" />
                             <Text text="{einkaufspreis}" />
