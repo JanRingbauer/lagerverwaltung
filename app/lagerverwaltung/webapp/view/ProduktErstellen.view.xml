@@ -63,7 +63,7 @@
                 </Input>
                 <Label text="Währung" labelFor="edit_input_waehrung" />
 		        <ActionSelect
-			        selectedKey="{createModel>/waehrung}"
+			        selectedKey="{createModel>/waehrung_ID}"
 			        items="{
 			        path: '/Waehrung',
 			        sorter: { path:'name'}

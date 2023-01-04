@@ -40,7 +40,7 @@ sap.ui.define(
               beschreibung: "",
               anzahl: 1,
               einkaufspreis: 0.1,
-              waehrung: ""
+              waehrung_ID: ""
             });
             this.getView().setModel(oModel, "createModel");
           },
@@ -100,22 +100,15 @@ sap.ui.define(
             
           //this.getView().bindElement(oListBindingContext.getPath());
           if(this.bCreate){
-            let oCreate={
-              anzahl: "1",
-              beschreibung: "",
-              einkaufspreis: "0.1",
-              name: "mkl",
-              waehrung: "b0eb171b-3b02-4f7d-aa2b-02db8353c885"
-            };
-            oModel.bindList("/Produkt").create(oCreate);
-
-            oModel.submitBatch("$auto").then((oData, response)=>{
-              debugger;
-            }, (oError)=>{
+            let oListBinding=oModel.bindList("/Produkt");
+            oListBinding.attachCreateCompleted((oEvent)=>{
               debugger;
             })
-          }
-            /*oModel.submitBatch("$auto").then((oData, response) => {
+            let oCreateModelData=this.getView().getModel("createModel").getData();
+            debugger;
+            oListBinding.create(this.getView().getModel("createModel").getData());
+          
+            oModel.submitBatch("$auto").then((oData, response) => {
               debugger;
               MessageBox.success(sSuccessText, {
                 onClose: () => {
@@ -155,7 +148,7 @@ sap.ui.define(
               },
             );
           }
-        },*/
+        },
       },
-    },
+    
   );})

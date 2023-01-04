@@ -11,7 +11,7 @@ entity Produkt: managed {
     key ID            : UUID;
         name          : String;
         beschreibung  : String;
-        anzahl        : String;
+        anzahl        : Decimal;
         lagerort      : Association to Lagerort;
         einkaufspreis : Decimal;
         waehrung      : Association to Waehrung;
