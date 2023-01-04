@@ -36,13 +36,13 @@ sap.ui.define(
           //this.getView().setModel(oModel, "DetailModel");
         },
   
-        /*onListItemPressed: function (oEvent) {
+        onListItemPressed: function (oEvent) {
           let sPath = oEvent.getSource().getBindingContext().getPath();
           let oRouter = this.getOwnerComponent().getRouter();
-          oRouter.navTo("", {
+          oRouter.navTo("ProduktBearbeiten", {
             ID: sPath.split("(")[1].split(")")[0],
           });
-        },*/
+        },
 
         onCreatePressed: function () {
           let oRouter = this.getOwnerComponent().getRouter();

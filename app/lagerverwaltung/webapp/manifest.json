@@ -108,6 +108,11 @@
                     "name": "ProduktErstellen",
                     "pattern": "ProduktErstellen",
                     "target": "TargetProduktErstellen"
+                },
+                {
+                    "name": "ProduktBearbeiten",
+                    "pattern": "ProduktBearbeiten",
+                    "target": "TargetProduktBearbeiten"
                 }
             ],
             "targets": {
@@ -124,6 +129,13 @@
                     "clearControlAggregation": false,
                     "viewId": "ProduktErstellen",
                     "viewName": "ProduktErstellen"
+                },
+                "TargetProduktBearbeiten": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "ProduktBearbeiten",
+                    "viewName": "ProduktBearbeiten"
                 }
             }
         },
