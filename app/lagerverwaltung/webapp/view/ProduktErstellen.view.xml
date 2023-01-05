@@ -12,13 +12,13 @@
     xmlns:main="sap.ui.webc.fiori"
     height="100%"
     class="viewPadding">
-    <Page id="page" title="neuen Eintrag erstellen">
+    <Page id="page" title="Produkt Daten">
         <content>
             <f:SimpleForm
                 id="SimpleFormChange354"
                 editable="true"
                 layout="ResponsiveGridLayout"
-                title="Produkt Daten"
+                title="neuen Eintrag erstellen"
                 labelSpanXL="3"
                 labelSpanL="3"
                 labelSpanM="3"

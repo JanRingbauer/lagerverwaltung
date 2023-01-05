@@ -9,7 +9,7 @@
     xmlns="sap.m"
 	xmlns:main="sap.ui.webc.fiori"
 	height="100%">
-    <Page id="lagerungen_page" title="{i18n>title}">
+    <Page id="lagerungen_page" title="Lagerorte">
         <content>
 				
         </content>

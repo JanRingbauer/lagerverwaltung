@@ -7,13 +7,13 @@
     xmlns:u="sap.ui.unified" 
     xmlns="sap.m"
     class="viewPadding">
-    <Page id="page" title="Lieferungen">
+    <Page id="page" title="Lagerorte">
         <content>
         <HBox>
-        <Table id="produkte_table" headerText="Lieferungen" items="{path:'/Lagerort'}">
+        <Table id="produkte_table" headerText="Lagerorte" items="{path:'/Lagerort'}">
                 <headerToolbar>
                     <OverflowToolbar id="_IDGenOverflowToolbar1">
-                        <Title id="_IDGenTitle1" text="Lieferungen" />
+                        <Title id="_IDGenTitle1" text="Lagerorte" />
                         <ToolbarSpacer id="_IDGenToolbarSpacer1" />
                         <Button icon="sap-icon://download" press="toExcel" />
                         <Button text="neuen Eintrag erstellen" type="Accept" press="onCreatePressed" />

@@ -6,7 +6,7 @@
     <f:SimpleForm id="SimpleFormChange354"
 			editable="true"
 			layout="ResponsiveGridLayout"
-			title="Lieferung erstellen"
+			title="Lagerort bearbeiten"
 			labelSpanXL="3"
 			labelSpanL="3"
 			labelSpanM="3"

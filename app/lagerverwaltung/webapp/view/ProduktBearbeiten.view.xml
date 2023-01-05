@@ -12,13 +12,13 @@
     xmlns:main="sap.ui.webc.fiori"
     height="100%"
     class="viewPadding">
-    <Page id="bearbeiten_page" title="Eintrag bearbeiten" >
+    <Page id="bearbeiten_page" title="Produkt Daten" >
         <content>
             <f:SimpleForm
                 id="SimpleFormChange354"
                 editable="true"
                 layout="ResponsiveGridLayout"
-                title="Produkt Daten"
+                title="Eintrag bearbeiten"
                 labelSpanXL="3"
                 labelSpanL="3"
                 labelSpanM="3"
