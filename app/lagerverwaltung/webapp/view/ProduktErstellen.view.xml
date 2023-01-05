@@ -33,7 +33,7 @@
                 columnsM="1"
                 singleContainerFullSize="false">
                 <f:content>
-                <Label text="Produktname" labelFor="edit_input_firstname" />
+                <Label text="Produktname" labelFor="edit_input_produktname" />
 				<Input value="{createModel>/name}" />
 				<Label text="Produktbeschreibung" labelFor="edit_input_produktbeschreibung"/>
 				<Input value="{createModel>/beschreibung}">

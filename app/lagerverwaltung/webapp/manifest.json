@@ -113,6 +113,36 @@
                     "name": "ProduktBearbeiten",
                     "pattern": "ProduktBearbeiten",
                     "target": "TargetProduktBearbeiten"
+                },
+                {
+                    "name": "Lieferungen",
+                    "pattern": "Lieferungen",
+                    "target": "TargetLieferungen"
+                },
+                {
+                    "name": "LieferungErstellen",
+                    "pattern": "LieferungErstellen",
+                    "target": "TargetLieferungenDetails"
+                },
+                {
+                    "name": "LieferungBearbeiten",
+                    "pattern": "LieferungBearbeiten",
+                    "target": "TargetLieferungenDetails"
+                },
+                {
+                    "name": "Lagerorte",
+                    "pattern": "Lagerorte",
+                    "target": "TargetLagerorte"
+                },
+                {
+                    "name": "LagerortErstellen",
+                    "pattern": "LagerortErstellen",
+                    "target": "TargetLagerorteDetails"
+                },
+                {
+                    "name": "LagerortBearbeiten",
+                    "pattern": "LagerortBearbeiten",
+                    "target": "TargetLagerorteDetails"
                 }
             ],
             "targets": {
@@ -136,7 +166,36 @@
                     "clearControlAggregation": false,
                     "viewId": "ProduktBearbeiten",
                     "viewName": "ProduktBearbeiten"
+                },
+                "TargetLieferungen": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Lieferungen",
+                    "viewName": "Lieferungen"
+                },
+                "TargetLieferungenDetails": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "LieferungenDetails",
+                    "viewName": "LieferungenDetails"
+                },
+                "TargetLagerorte": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Lagerorte",
+                    "viewName": "Lagerorte"
+                },
+                "TargetLagerorteDetails": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "LagerorteDetails",
+                    "viewName": "LagerorteDetails"
                 }
+                
             }
         },
         "rootView": {

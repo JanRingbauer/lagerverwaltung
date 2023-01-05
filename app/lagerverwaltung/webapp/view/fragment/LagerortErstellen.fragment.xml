@@ -1,0 +1,60 @@
+<core:FragmentDefinition 
+  xmlns:core="sap.ui.core" 
+  xmlns="sap.m"
+  xmlns:f="sap.ui.layout.form">
+
+    <f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Lieferung erstellen"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+                <Label text="Produktname" labelFor="edit_input_produktname" />
+		        <ActionSelect
+			        selectedKey="{produkt_ID}"
+			        items="{
+			        path: 'Produkt',
+			        sorter: { path:'name'}
+			        }">
+		            <items>
+				        <core:Item text="{name}" key="{ID}"/>
+			        </items>
+		        </ActionSelect>
+				<Label text="Lieferungsanzahl" wrapping="true"/>
+				<VBox>
+					<StepInput
+						value="{createModel>/lagerAnz}"
+						displayValuePrecision="{displayValuePrecision}"
+						min="1"
+						max="{max}"
+						width="{width}"
+						step="{step}"
+						largerStep="{largerStep}"
+						stepMode="{stepMode}"
+						valueState="{valueState}"
+						enabled="{enabled}"
+						editable="{editable}"
+						description="{description}"
+						fieldWidth="{fieldWidth}"
+						textAlign="{textAlign}"
+						validationMode="{validationMode}"
+						change="onChange"/>
+				</VBox>
+                <Label text="Lagerort" labelFor="edit_input_lagerort"/>
+				<Input value="{createModel>/ort}">
+				</Input>
+				</f:content>
+		</f:SimpleForm>
+</core:FragmentDefinition>

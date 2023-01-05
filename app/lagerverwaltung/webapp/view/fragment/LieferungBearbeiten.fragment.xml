@@ -1,0 +1,73 @@
+<core:FragmentDefinition 
+  xmlns:core="sap.ui.core" 
+  xmlns="sap.m"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:u="sap.ui.unified"
+  class="sapUiContentPadding"
+  width="100%">
+
+    <f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Lieferung erstellen"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+                <Label text="Produktname" labelFor="edit_input_produktname" />
+		        <ActionSelect
+			        selectedKey="{produkt_ID}"
+			        items="{
+			        path: 'Produkt',
+			        sorter: { path:'name'}
+			        }">
+		            <items>
+				        <core:Item text="{name}" key="{ID}"/>
+			        </items>
+		        </ActionSelect>
+				<Label text="Lieferungsanzahl" wrapping="true"/>
+				<VBox>
+					<StepInput
+						value="{lieferungsAnz}"
+						displayValuePrecision="{displayValuePrecision}"
+						min="1"
+						max="{max}"
+						width="{width}"
+						step="{step}"
+						largerStep="{largerStep}"
+						stepMode="{stepMode}"
+						valueState="{valueState}"
+						enabled="{enabled}"
+						editable="{editable}"
+						description="{description}"
+						fieldWidth="{fieldWidth}"
+						textAlign="{textAlign}"
+						validationMode="{validationMode}"
+						change="onChange"/>
+				</VBox>
+                <Label text="Lieferant" labelFor="edit_input_lieferant"/>
+				<Input value="{name}">
+				</Input>
+				<Label text="Steuernummer" labelFor="edit_input_steuernummer"/>
+				<Input value="{steuernummer}" type="Number">
+                </Input>
+				<Label text="Datum" labelFor="edit_input_datum" />
+		        <u:Calendar
+			        id="calendar"
+				    select="handleCalendarSelect"
+                    startDateChange="handleStartDateChange"
+                    intervalSelection="false"
+				    singleSelection="true"/>
+				</f:content>
+		</f:SimpleForm>
+</core:FragmentDefinition>

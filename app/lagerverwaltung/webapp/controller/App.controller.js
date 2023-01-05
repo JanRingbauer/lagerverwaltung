@@ -14,8 +14,8 @@ sap.ui.define([
                 let oRouter=this.getOwnerComponent().getRouter();
                 if(oEvent.getParameters().listItem.getId().includes("produkte_ID")){
                     oRouter.navTo("Produkte");
-                }else if(oEvent.getParameters().listItem.getId().includes("lieferanten_ID")){
-                    oRouter.navTo("Lieferanten");
+                }else if(oEvent.getParameters().listItem.getId().includes("lieferungen_ID")){
+                    oRouter.navTo("Lieferungen");
                 }else if(oEvent.getParameters().listItem.getId().includes("lagerorte_ID")){
                     oRouter.navTo("Lagerorte");
                 }

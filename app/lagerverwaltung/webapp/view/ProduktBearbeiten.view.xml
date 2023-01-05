@@ -34,14 +34,14 @@
                 singleContainerFullSize="false">
                 <f:content>
                 <Label text="Produktname" labelFor="edit_input_firstname" />
-				<Input value="{createModel>/name}" />
+				<Input value="{name}" />
 				<Label text="Produktbeschreibung" labelFor="edit_input_produktbeschreibung"/>
-				<Input value="{createModel>/beschreibung}">
+				<Input value="{beschreibung}">
 				</Input>
                 <Label text="Anzahl" wrapping="true"/>
 				<VBox>
 					<StepInput
-						value="{createModel>/anzahl}"
+						value="{anzahl}"
 						displayValuePrecision="{displayValuePrecision}"
 						min="1"
 						max="{max}"
@@ -59,11 +59,11 @@
 						change="onChange"/>
 				</VBox>
 				<Label text="Einkauspreis" labelFor="edit_input_einkaufspreis"/>
-				<Input value="{path:'createModel>/einkaufspreis', type: 'sap.ui.model.odata.type.Double'}" type="Number">
+				<Input value="{path:'einkaufspreis', type: 'sap.ui.model.odata.type.Double'}" type="Number">
                 </Input>
                 <Label text="Währung" labelFor="edit_input_waehrung" />
 		        <ActionSelect
-			        selectedKey="{createModel>/waehrung}"
+			        selectedKey="{waehrung_ID}"
 			        items="{
 			        path: '/Waehrung',
 			        sorter: { path:'name'}

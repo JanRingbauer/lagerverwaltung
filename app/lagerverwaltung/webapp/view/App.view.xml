@@ -16,7 +16,7 @@
                 <List itemPress="_onListItemPressed">
                     <items>
                     <StandardListItem id="produkte_ID" title="Produkte" type="Active" />
-                    <StandardListItem id="lieferanten_ID" title="Lieferanten" type="Active" />
+                    <StandardListItem id="lieferungen_ID" title="Lieferungen" type="Active" />
                     <StandardListItem id="lagerorte_ID" title="Lagerorte" type="Active" />
                     </items>
                 </List>

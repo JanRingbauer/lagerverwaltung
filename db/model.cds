@@ -20,13 +20,18 @@ entity Produkt: managed {
 
 entity Lieferant: managed {
     key ID           : UUID;
-        name         : String;
+        produkt : Association to Produkt;
+        name  : String;
         steuernummer : String;
+        lieferungsAnz : Decimal;
+        date : Date;
 }
 
 entity Lagerort: managed {
     key ID  : UUID;
         ort : String;
+        lagerAnz : Decimal;
+        produkt : Association to Produkt;
 }
 entity Waehrung: managed {
     key ID : UUID;

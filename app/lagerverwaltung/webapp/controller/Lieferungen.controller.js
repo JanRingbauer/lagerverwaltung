@@ -30,23 +30,21 @@ sap.ui.define(
     ) {
       "use strict";
   
-      return Controller.extend("at.clouddna.lagerverwaltung.controller.Produkte", {
+      return Controller.extend("at.clouddna.lagerverwaltung.controller.Lieferungen", {
         onInit: function () {
-          //let oModel = new JSONModel({ employee_ID: null, absencetype_ID: null });
-          //this.getView().setModel(oModel, "DetailModel");
         },
   
         onListItemPressed: function (oEvent) {
           let sPath = oEvent.getSource().getBindingContext().getPath();
           let oRouter = this.getOwnerComponent().getRouter();
-          oRouter.navTo("ProduktBearbeiten", {
+          oRouter.navTo("LieferungBearbeiten", {
             ID: sPath.split("(")[1].split(")")[0],
           });
         },
 
         onCreatePressed: function () {
           let oRouter = this.getOwnerComponent().getRouter();
-          oRouter.navTo("ProduktErstellen");
+          oRouter.navTo("LieferungErstellen");
         },
   
         onDeleteButtonPressed: function (oEvent) {
@@ -84,20 +82,20 @@ sap.ui.define(
               property: "Produkt/name"
           });
           aColumns.push({
-              label: "Lastname",
-              property: "Produkt/beschreibung"
+              label: "Lieferanzahl",
+              property: "Lieferant/lieferAnz"
           });
           aColumns.push({
-              label: "Anzahl",
-              property: "Produkt/anzahl"
+              label: "Lieferant",
+              property: "Lieferant/name"
           });
           aColumns.push({
-            label: "Einkaufspreis",
-            property: "Produkt/einkaufspreis"
+            label: "Steuernummer",
+            property: "Lieferant/steuernummer"
           });
           aColumns.push({
-            label: "Währung",
-            property: "Produkt/waehrung"
+            label: "Datum",
+            property: "Lieferant/date"
           });
         
           var mSettings = {
@@ -106,16 +104,16 @@ sap.ui.define(
               context: {
                 application: 'Debug Test Application',
                 version: '1.105.0',
-                title: 'Produkte',
+                title: 'Lieferungen',
               },
               hierarchyLevel: 'level'
             },
             dataSource: {
               type: "odata",
-              dataUrl: `/Lagerverwaltung/Produkt`,
+              dataUrl: `/Lagerverwaltung/Lieferant`,
               serviceUrl: ""
             },
-            fileName: "Produkte.xlsx"
+            fileName: "Lieferungen.xlsx"
           };
           var oSpreadsheet = new Spreadsheet(mSettings);
           oSpreadsheet.build();
