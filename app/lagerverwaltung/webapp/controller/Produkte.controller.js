@@ -81,23 +81,23 @@ sap.ui.define(
           var aColumns = [];
           aColumns.push({
               label: "Produktname",
-              property: "Produkt/name"
+              property: "name"
           });
           aColumns.push({
               label: "Lastname",
-              property: "Produkt/beschreibung"
+              property: "beschreibung"
           });
           aColumns.push({
               label: "Anzahl",
-              property: "Produkt/anzahl"
+              property: "anzahl"
           });
           aColumns.push({
             label: "Einkaufspreis",
-            property: "Produkt/einkaufspreis"
+            property: "einkaufspreis"
           });
           aColumns.push({
             label: "Währung",
-            property: "Produkt/waehrung"
+            property: "waehrung/name"
           });
         
           var mSettings = {
@@ -112,7 +112,7 @@ sap.ui.define(
             },
             dataSource: {
               type: "odata",
-              dataUrl: `/Lagerverwaltung/Produkt`,
+              dataUrl: `/Lagerverwaltung/Produkt?$expand=waehrung`,
               serviceUrl: ""
             },
             fileName: "Produkte.xlsx"

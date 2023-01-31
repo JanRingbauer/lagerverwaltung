@@ -79,23 +79,23 @@ sap.ui.define(
           var aColumns = [];
           aColumns.push({
               label: "Produktname",
-              property: "Produkt/name"
+              property: "produkt/name",
           });
           aColumns.push({
               label: "Lieferanzahl",
-              property: "Lieferant/lieferAnz"
+              property: "lieferungsAnz"
           });
           aColumns.push({
               label: "Lieferant",
-              property: "Lieferant/name"
+              property: "name"
           });
           aColumns.push({
             label: "Steuernummer",
-            property: "Lieferant/steuernummer"
-          });
+            property: "steuernummer"
+          })
           aColumns.push({
             label: "Datum",
-            property: "Lieferant/date"
+            property: "date"
           });
         
           var mSettings = {
@@ -110,7 +110,7 @@ sap.ui.define(
             },
             dataSource: {
               type: "odata",
-              dataUrl: `/Lagerverwaltung/Lieferant`,
+              dataUrl: `/Lagerverwaltung/Lieferant?$expand=produkt`,
               serviceUrl: ""
             },
             fileName: "Lieferungen.xlsx"

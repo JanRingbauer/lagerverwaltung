@@ -44,10 +44,7 @@ sap.ui.define(
           this.getView().unbindElement();
           let oContext =this.getView().getModel().bindList("/Lieferant").create(undefined, undefined, undefined, true);
           this._setFragement("LieferungErstellen");
-          let oSimpelForm =this.getView().byId("createLieferung");
-          debugger;
-          
-          
+          this.getView().setBindingContext(oContext);
         },
         onDeleteButtonPressed: function (oEvent){
           let oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
@@ -89,42 +86,6 @@ sap.ui.define(
           }
         },
 
-        handleCalendarSelect: function (oEvent) {
-          let oCalendar = oEvent.getSource();
-          this._updateText(oCalendar);
-        },
-        handleStartDateChange: function (oEvent) {
-          let oStart = oEvent.getSource().getStartDate();
-          let oEnd = new Date(oStart.getFullYear(), oStart.getMonth() + 1, 0);
-          let aFilter = [];
-          let oView = this.getView();
-          let aAndFilter = new Filter(aFilter, true);
-          oView
-            .byId("lieferungen_page")
-            .getBinding("items")
-            .filter(aAndFilter, FilterType.Application);
-          let oDateRangeSelector = this.getView().byId("searchField");
-        },
-  
-        _updateText: function (oCalendar) {
-          let oText = this.byId("selectedDate"),
-            aSelectedDates = oCalendar.getSelectedDates(),
-            oDate = aSelectedDates[0].getStartDate();
-          oDate = new Date(
-            Date.UTC(oDate.getFullYear(), oDate.getMonth(), oDate.getDate())
-          );
-          let oInput = this.getView().getModel("DetailModel").getData(),
-            oCreateData = {
-              produkt_ID: oInput.produkt_ID,
-              date_ID: oDate.toISOString().split("T")[0],
-            };
-          let oListBindingContext = this.getView()
-            .getModel()
-            .bindList("/Lieferung")
-            .create(oCreateData);
-          this.getView().getModel().refresh();
-        },
-  
         onNavBack: function () {
           let oHistory = History.getInstance();
           let sPreviousHash = oHistory.getPreviousHash();
@@ -133,7 +94,7 @@ sap.ui.define(
             window.history.go(-1);
           } else {
             let oRouter = this.getOwnerComponent().getRouter();
-            oRouter.navTo("LieferungenDetails");
+            oRouter.navTo("Lieferungen");
           }
         },
         onEditPressed: function () {
@@ -165,10 +126,9 @@ sap.ui.define(
             let oListBinding=oModel.bindList("/Lieferant");
             oListBinding.attachCreateCompleted((oEvent)=>{
               debugger;
+
             })
-            let oCreateModelData=this.getView().getModel("createModel").getData();
-            debugger;
-            oListBinding.create(this.getView().getModel("createModel").getData());
+            //oListBinding.create(this.getView().getModel("createModel").getData());
 
             //let oListBindingContext=this.getView().getModel().bindList("/Lieferant").create(this.getView().getModel("createModel").getData());
         

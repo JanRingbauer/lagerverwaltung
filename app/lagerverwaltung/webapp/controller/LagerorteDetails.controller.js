@@ -42,14 +42,9 @@ sap.ui.define(
         _onPatternMatchedCreate: function (oEvent) {
           this.bCreate = true; 
           this.getView().unbindElement();
-          let oModel=new JSONModel({
-            produkt_ID : "",
-            lagerAnz: 1,
-            ort:"",
-          });
-          this.getView().setModel(oModel, "createModel");
-          
+          let oContext =this.getView().getModel().bindList("/Lagerort").create(undefined, undefined, undefined, true);
           this._setFragement("LagerortErstellen");
+          this.getView().setBindingContext(oContext);
         },
         onDeleteButtonPressed: function (oEvent){
           let oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
@@ -132,9 +127,7 @@ sap.ui.define(
             oListBinding.attachCreateCompleted((oEvent)=>{
               debugger;
             })
-            let oCreateModelData=this.getView().getModel("createModel").getData();
-            debugger;
-            oListBinding.create(this.getView().getModel("createModel").getData());
+            //oListBinding.create(this.getView().getModel("createModel").getData());
 
             //let oListBindingContext=this.getView().getModel().bindList("/Lieferant").create(this.getView().getModel("createModel").getData());
         

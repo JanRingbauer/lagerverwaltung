@@ -24,6 +24,7 @@
                 <Label text="Produktname" labelFor="edit_input_produktname" />
 		        <ActionSelect
 			        selectedKey="{produkt_ID}"
+					forceSelection="false"
 			        items="{
 			        path: '/Produkt',
 			        sorter: { path:'name'}

@@ -26,7 +26,7 @@
 			<f:content>
                 <Label text="Produktname" labelFor="edit_input_produktname" />
 		        <ActionSelect
-			        selectedKey="{createModel>produkt_ID}"
+			        selectedKey="{produkt_ID}"
 			        items="{
 			        path: '/Produkt',
 			        sorter: { path:'name'}
@@ -38,22 +38,17 @@
 				<Label text="Lieferungsanzahl" wrapping="true"/>
 				<VBox>
 					<StepInput
-						value="{createModel>/lieferungsAnz}"
+						value="{lieferungsAnz}"
 						change="onChange"/>
 				</VBox>
                 <Label text="Lieferant" labelFor="edit_input_lieferant"/>
-				<Input value="{createModel>/name}">
+				<Input value="{name}">
 				</Input>
 				<Label text="Steuernummer" labelFor="edit_input_steuernummer"/>
-				<Input value="{createModel>/steuernummer}" type="Number">
+				<Input value="{steuernummer}" type="Number">
                 </Input>
 				<Label text="Datum" labelFor="edit_input_datum" />
-		        <u:Calendar
-			        id="calendar"
-				    select="handleCalendarSelect"
-                    startDateChange="handleStartDateChange"
-                    intervalSelection="false"
-				    singleSelection="true"/>
+		       	<DatePicker dateValue="{date}"/>
 				</f:content>
 		</f:SimpleForm>
 </core:FragmentDefinition>

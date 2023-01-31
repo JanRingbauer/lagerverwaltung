@@ -26,6 +26,7 @@
                 <Label text="Produktname" labelFor="edit_input_produktname" />
 		        <ActionSelect
 			        selectedKey="{produkt_ID}"
+					forceSelection="false"
 			        items="{
 			        path: '/Produkt',
 			        sorter: { path:'name'}
@@ -47,12 +48,8 @@
 				<Input value="{steuernummer}" type="Number">
                 </Input>
 				<Label text="Datum" labelFor="edit_input_datum"/>
-		        <u:Calendar
-			        id="calendar"
-				    select="handleCalendarSelect"
-                    startDateChange="handleStartDateChange"
-                    intervalSelection="false"
-				    singleSelection="true"/>
+				<DatePicker dateValue="{date}"/>
+	
 				</f:content>
 		</f:SimpleForm>
 </core:FragmentDefinition>

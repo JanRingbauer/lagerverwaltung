@@ -79,15 +79,15 @@ sap.ui.define(
           var aColumns = [];
           aColumns.push({
               label: "Produktname",
-              property: "Produkt/name"
+              property: "produkt/name"
           });
           aColumns.push({
               label: "Lager Anzahl",
-              property: "Lagerort/lagerAnz"
+              property: "lagerAnz"
           });
           aColumns.push({
               label: "Lagerort",
-              property: "Lagerort/ort"
+              property: "ort"
           });
         
           var mSettings = {
@@ -102,7 +102,7 @@ sap.ui.define(
             },
             dataSource: {
               type: "odata",
-              dataUrl: `/Lagerverwaltung/Lagerort`,
+              dataUrl: `/Lagerverwaltung/Lagerort?$expand=produkt`,
               serviceUrl: ""
             },
             fileName: "Lagerort.xlsx"
