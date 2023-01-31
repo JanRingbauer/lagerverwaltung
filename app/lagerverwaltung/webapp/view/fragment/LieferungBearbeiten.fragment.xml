@@ -26,9 +26,9 @@
 			<f:content>
                 <Label text="Produktname" labelFor="edit_input_produktname" />
 		        <ActionSelect
-			        selectedKey="{produkt_ID}"
+			        selectedKey="{createModel>produkt_ID}"
 			        items="{
-			        path: 'Produkt',
+			        path: '/Produkt',
 			        sorter: { path:'name'}
 			        }">
 		            <items>
@@ -38,28 +38,14 @@
 				<Label text="Lieferungsanzahl" wrapping="true"/>
 				<VBox>
 					<StepInput
-						value="{lieferungsAnz}"
-						displayValuePrecision="{displayValuePrecision}"
-						min="1"
-						max="{max}"
-						width="{width}"
-						step="{step}"
-						largerStep="{largerStep}"
-						stepMode="{stepMode}"
-						valueState="{valueState}"
-						enabled="{enabled}"
-						editable="{editable}"
-						description="{description}"
-						fieldWidth="{fieldWidth}"
-						textAlign="{textAlign}"
-						validationMode="{validationMode}"
+						value="{createModel>/lieferungsAnz}"
 						change="onChange"/>
 				</VBox>
                 <Label text="Lieferant" labelFor="edit_input_lieferant"/>
-				<Input value="{name}">
+				<Input value="{createModel>/name}">
 				</Input>
 				<Label text="Steuernummer" labelFor="edit_input_steuernummer"/>
-				<Input value="{steuernummer}" type="Number">
+				<Input value="{createModel>/steuernummer}" type="Number">
                 </Input>
 				<Label text="Datum" labelFor="edit_input_datum" />
 		        <u:Calendar

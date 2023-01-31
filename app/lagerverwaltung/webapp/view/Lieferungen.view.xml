@@ -7,7 +7,7 @@
     xmlns:u="sap.ui.unified" 
     xmlns="sap.m"
     class="viewPadding">
-    <Page id="page" title="Lieferungen">
+    <Page id="lieferungen_page" title="Lieferungen">
         <content>
         <HBox>
         <Table id="produkte_table" headerText="Lieferungen" items="{path:'/Lieferant', parameters:{expand:'Produkt'}}">

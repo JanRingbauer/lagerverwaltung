@@ -33,7 +33,7 @@
                 columnsM="1"
                 singleContainerFullSize="false">
                 <f:content>
-                <Label text="Produktname" labelFor="edit_input_firstname" />
+                <Label text="Produktname" labelFor="edit_input_produktname" />
 				<Input value="{name}" />
 				<Label text="Produktbeschreibung" labelFor="edit_input_produktbeschreibung"/>
 				<Input value="{beschreibung}">
@@ -42,26 +42,12 @@
 				<VBox>
 					<StepInput
 						value="{anzahl}"
-						displayValuePrecision="{displayValuePrecision}"
-						min="1"
-						max="{max}"
-						width="{width}"
-						step="{step}"
-						largerStep="{largerStep}"
-						stepMode="{stepMode}"
-						valueState="{valueState}"
-						enabled="{enabled}"
-						editable="{editable}"
-						description="{description}"
-						fieldWidth="{fieldWidth}"
-						textAlign="{textAlign}"
-						validationMode="{validationMode}"
 						change="onChange"/>
 				</VBox>
 				<Label text="Einkauspreis" labelFor="edit_input_einkaufspreis"/>
 				<Input value="{path:'einkaufspreis', type: 'sap.ui.model.odata.type.Double'}" type="Number">
                 </Input>
-                <Label text="Währung" labelFor="edit_input_waehrung" />
+                <Label text="Währung" labelFor="edit_input_waehrung"/>
 		        <ActionSelect
 			        selectedKey="{waehrung_ID}"
 			        items="{

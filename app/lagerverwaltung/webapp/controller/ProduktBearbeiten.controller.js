@@ -32,7 +32,7 @@ sap.ui.define(
           this.getView().bindObject({
             path: sPath,
             parameters: {
-              "$select": "ID,name,beschreibung,anzahl,einkaufspreis,waehrung_ID"
+              "$select": "ID,name,beschreibung,anzahl,einkaufspreis"
             },
             events: { dataReceived: function (data) {
             }.bind(this)
@@ -104,10 +104,10 @@ sap.ui.define(
 
         let sSuccessText = this.bCreate
           ? oResourceBundle.getText(
-              "Ihr Eintrag wurde erfolgreich erstellt."
+            "Ihr Eintrag konnte nicht bearbeitet werden."
             )
           : oResourceBundle.getText(
-              "Ihr Eintrag konnte nicht erstellt werden."
+              "Ihr Eintrag wurde erfolgreich bearbeitet."
             );
 
         if (this.bCreate) {

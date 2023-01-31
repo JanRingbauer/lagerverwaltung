@@ -25,35 +25,21 @@
 		        <ActionSelect
 			        selectedKey="{produkt_ID}"
 			        items="{
-			        path: 'Produkt',
+			        path: '/Produkt',
 			        sorter: { path:'name'}
 			        }">
 		            <items>
 				        <core:Item text="{name}" key="{ID}"/>
 			        </items>
 		        </ActionSelect>
-				<Label text="Lieferungsanzahl" wrapping="true"/>
+				<Label text="Lager Anzahl" wrapping="true"/>
 				<VBox>
 					<StepInput
-						value="{createModel>/lagerAnz}"
-						displayValuePrecision="{displayValuePrecision}"
-						min="1"
-						max="{max}"
-						width="{width}"
-						step="{step}"
-						largerStep="{largerStep}"
-						stepMode="{stepMode}"
-						valueState="{valueState}"
-						enabled="{enabled}"
-						editable="{editable}"
-						description="{description}"
-						fieldWidth="{fieldWidth}"
-						textAlign="{textAlign}"
-						validationMode="{validationMode}"
+						value="{lagerAnz}"
 						change="onChange"/>
 				</VBox>
                 <Label text="Lagerort" labelFor="edit_input_lagerort"/>
-				<Input value="{createModel>/ort}">
+				<Input value="{ort}">
 				</Input>
 				</f:content>
 		</f:SimpleForm>

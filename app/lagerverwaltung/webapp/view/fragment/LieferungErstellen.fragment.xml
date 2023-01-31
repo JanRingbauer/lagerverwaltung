@@ -5,8 +5,7 @@
   xmlns:u="sap.ui.unified"
   class="sapUiContentPadding"
   width="100%">
-
-    <f:SimpleForm id="SimpleFormChange354"
+    <f:SimpleForm id="createLieferung"
 			editable="true"
 			layout="ResponsiveGridLayout"
 			title="Lieferung erstellen"
@@ -28,7 +27,7 @@
 		        <ActionSelect
 			        selectedKey="{produkt_ID}"
 			        items="{
-			        path: 'Produkt',
+			        path: '/Produkt',
 			        sorter: { path:'name'}
 			        }">
 		            <items>
@@ -38,30 +37,16 @@
 				<Label text="Lieferungsanzahl" wrapping="true"/>
 				<VBox>
 					<StepInput
-						value="{createModel>/lieferungsAnz}"
-						displayValuePrecision="{displayValuePrecision}"
-						min="1"
-						max="{max}"
-						width="{width}"
-						step="{step}"
-						largerStep="{largerStep}"
-						stepMode="{stepMode}"
-						valueState="{valueState}"
-						enabled="{enabled}"
-						editable="{editable}"
-						description="{description}"
-						fieldWidth="{fieldWidth}"
-						textAlign="{textAlign}"
-						validationMode="{validationMode}"
+						value="{lieferungsAnz}"
 						change="onChange"/>
 				</VBox>
                 <Label text="Lieferant" labelFor="edit_input_lieferant"/>
-				<Input value="{createModel>/name}">
+				<Input value="{name}">
 				</Input>
 				<Label text="Steuernummer" labelFor="edit_input_steuernummer"/>
-				<Input value="{createModel>/steuernummer}" type="Number">
+				<Input value="{steuernummer}" type="Number">
                 </Input>
-				<Label text="Datum" labelFor="edit_input_datum" />
+				<Label text="Datum" labelFor="edit_input_datum"/>
 		        <u:Calendar
 			        id="calendar"
 				    select="handleCalendarSelect"

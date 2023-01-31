@@ -5,7 +5,6 @@
 	xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
 	xmlns:fiori="sap.ui.core.mvc"
-	
     xmlns="sap.m"
 	xmlns:main="sap.ui.webc.fiori"
 	height="100%">

@@ -111,7 +111,7 @@
                 },
                 {
                     "name": "ProduktBearbeiten",
-                    "pattern": "ProduktBearbeiten",
+                    "pattern": "ProduktBearbeiten/{ID}",
                     "target": "TargetProduktBearbeiten"
                 },
                 {
@@ -126,7 +126,7 @@
                 },
                 {
                     "name": "LieferungBearbeiten",
-                    "pattern": "LieferungBearbeiten",
+                    "pattern": "LieferungBearbeiten/{ID}",
                     "target": "TargetLieferungenDetails"
                 },
                 {
@@ -141,7 +141,7 @@
                 },
                 {
                     "name": "LagerortBearbeiten",
-                    "pattern": "LagerortBearbeiten",
+                    "pattern": "LagerortBearbeiten/{ID}",
                     "target": "TargetLagerorteDetails"
                 }
             ],

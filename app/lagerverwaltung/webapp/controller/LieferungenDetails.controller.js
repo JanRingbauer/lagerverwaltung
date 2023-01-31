@@ -42,15 +42,12 @@ sap.ui.define(
         _onPatternMatchedCreate: function (oEvent) {
           this.bCreate = true; 
           this.getView().unbindElement();
-          let oModel=new JSONModel({
-            produkt_ID : "",
-            lieferungsAnz: 1,
-            name:"",
-            steuernummer:0
-          });
-          this.getView().setModel(oModel, "createModel");
-          
+          let oContext =this.getView().getModel().bindList("/Lieferant").create(undefined, undefined, undefined, true);
           this._setFragement("LieferungErstellen");
+          let oSimpelForm =this.getView().byId("createLieferung");
+          debugger;
+          
+          
         },
         onDeleteButtonPressed: function (oEvent){
           let oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
@@ -118,9 +115,8 @@ sap.ui.define(
           );
           let oInput = this.getView().getModel("DetailModel").getData(),
             oCreateData = {
-              employee_ID: oInput.employee_ID,
-              absence_day: oDate.toISOString().split("T")[0],
-              absencetype_ID: oInput.absencetype_ID,
+              produkt_ID: oInput.produkt_ID,
+              date_ID: oDate.toISOString().split("T")[0],
             };
           let oListBindingContext = this.getView()
             .getModel()
