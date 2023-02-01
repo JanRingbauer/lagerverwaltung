@@ -10,7 +10,7 @@
     <Page id="page" title="Lagerorte">
         <content>
         <HBox>
-        <Table id="produkte_table" headerText="Lagerorte" items="{path:'/Lagerort'}">
+        <Table id="produkte_table" headerText="Lagerorte" items="{path:'/Lagerort',$orderby:'ort'}">
                 <headerToolbar>
                     <OverflowToolbar id="_IDGenOverflowToolbar1">
                         <Title id="_IDGenTitle1" text="Lagerorte" />
